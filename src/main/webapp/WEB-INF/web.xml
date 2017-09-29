@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+      classpath:spring-context.xml
+    </param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>personServlet</servlet-name>
+    <servlet-class>com.ilyasov.server.PersonServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>personServlet</servlet-name>
+    <url-pattern>/gwt/person</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>gwt.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
